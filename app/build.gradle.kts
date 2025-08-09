@@ -12,6 +12,7 @@ plugins {
 dependencies {
     // Kotlin
     implementation(libs.bundles.exposed)
+    implementation(libs.driver.h2)
 }
 
 application {

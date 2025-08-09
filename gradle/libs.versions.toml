@@ -8,6 +8,7 @@ kotlin-kaml = "0.83.0" # https://github.com/charleskorn/kaml
 # Drivers
 driver-jdbc = "3.50.2.0" # https://github.com/xerial/sqlite-jdbc
 driver-mysql = "8.0.33" # https://github.com/mysql/mysql-connector-j
+driver-h2 = "2.2.224"
 
 # klibs
 klibs-gradleplugin = "1.10.0" # https://github.com/makeevrserg/gradle-plugin
@@ -29,6 +30,7 @@ kotlin-serializationKaml = { module = "com.charleskorn.kaml:kaml", version.ref =
 # Drivers
 driver-jdbc = { module = "org.xerial:sqlite-jdbc", version.ref = "driver-jdbc" }
 driver-mysql = { module = "mysql:mysql-connector-java", version.ref = "driver-mysql" }
+driver-h2 = { module = "com.h2database:h2", version.ref = "driver-h2" }
 
 # Exposed
 exposed-java-time = { module = "org.jetbrains.exposed:exposed-java-time", version.ref = "exposed" }
