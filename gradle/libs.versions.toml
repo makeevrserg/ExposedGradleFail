@@ -1,0 +1,57 @@
+[versions]
+# Kotlin
+kotlin-version = "2.2.0" # https://github.com/JetBrains/kotlin
+kotlin-coroutines = "1.10.2" # https://github.com/Kotlin/kotlinx.coroutines
+kotlin-json = "1.9.0" # https://github.com/Kotlin/kotlinx.serialization
+kotlin-kaml = "0.83.0" # https://github.com/charleskorn/kaml
+
+# Drivers
+driver-jdbc = "3.50.2.0" # https://github.com/xerial/sqlite-jdbc
+driver-mysql = "8.0.33" # https://github.com/mysql/mysql-connector-j
+
+# klibs
+klibs-gradleplugin = "1.10.0" # https://github.com/makeevrserg/gradle-plugin
+
+# Shadow
+gradle-shadow = "9.0.0-beta12" # https://github.com/johnrengelman/shadow
+
+# Exposed
+exposed = "0.50.1" # https://github.com/JetBrains/Exposed
+
+[libraries]
+# Kotlin
+kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
+kotlin-coroutines-coreJvm = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm", version.ref = "kotlin-coroutines" }
+kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin-version" }
+kotlin-serializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin-json" }
+kotlin-serializationKaml = { module = "com.charleskorn.kaml:kaml", version.ref = "kotlin-kaml" }
+
+# Drivers
+driver-jdbc = { module = "org.xerial:sqlite-jdbc", version.ref = "driver-jdbc" }
+driver-mysql = { module = "mysql:mysql-connector-java", version.ref = "driver-mysql" }
+
+# Exposed
+exposed-java-time = { module = "org.jetbrains.exposed:exposed-java-time", version.ref = "exposed" }
+exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+exposed-dao = { module = "org.jetbrains.exposed:exposed-dao", version.ref = "exposed" }
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+
+[bundles]
+exposed = ["exposed-java-time", "exposed-jdbc", "exposed-dao", "exposed-core"]
+
+[plugins]
+# Kotlin
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-version" }
+
+# klibs - core
+klibs-gradle-detekt = { id = "ru.astrainteractive.gradleplugin.detekt", version.ref = "klibs-gradleplugin" }
+klibs-gradle-detekt-compose = { id = "ru.astrainteractive.gradleplugin.detekt.compose", version.ref = "klibs-gradleplugin" }
+klibs-gradle-dokka-root = { id = "ru.astrainteractive.gradleplugin.dokka.root", version.ref = "klibs-gradleplugin" }
+klibs-gradle-dokka-module = { id = "ru.astrainteractive.gradleplugin.dokka.module", version.ref = "klibs-gradleplugin" }
+klibs-gradle-java-core = { id = "ru.astrainteractive.gradleplugin.java.core", version.ref = "klibs-gradleplugin" }
+klibs-gradle-publication = { id = "ru.astrainteractive.gradleplugin.publication", version.ref = "klibs-gradleplugin" }
+klibs-gradle-rootinfo = { id = "ru.astrainteractive.gradleplugin.root.info", version.ref = "klibs-gradleplugin" }
+
+# klibs - minecraft
+gradle-shadow = { id = "com.gradleup.shadow", version.ref = "gradle-shadow" }
