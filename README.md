@@ -14,3 +14,6 @@ Exception in thread "main" java.lang.AssertionError: Built-in class com.makeevrs
 ```
 
 After ShadowJar relocating, it would not be able to find kotlin.Any
+
+## Important
+The problem seems to happen after adding `.nullable()` inside Table()
